@@ -10,7 +10,7 @@
 	//Declaring variables
 		var wins = 0;
 		var losses = 0;
-		var guessesLeft = 20;
+		var guessesLeft = 10;
 		//empty array to collect guesses
 		var guessesSoFar = [];
 		var options = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -31,11 +31,20 @@
 			if (userGuess == computerLetter) {
 				alert("Good guess, you win!");
 				wins++;
+				guessesLeft = 10;
+				guessesSoFar = [];
+				userGuess = " ";
+		//Reduces remaining guesses
 			} else if (guessesLeft > 0) {
 				guessesLeft--;
 				console.log(guessesLeft);
+		//Out of guesses, resets the stats except losses/wins
 			} else {
 				alert("Game over.");
+				console.log(guessesLeft = 10);
+				console.log(guessesSoFar = []);
+				losses++;
+				userGuess = " ";
 			}
 
 		//Keep track of guesses - adds to list.
